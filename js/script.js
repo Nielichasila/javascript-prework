@@ -27,7 +27,8 @@ if(playerInput == '1'){
 } else if(playerInput == '3'){
     playerMove = 'nożyce';
 } else if(playerInput=='nieznany ruch')
-    playerMove = 'wybierz 1,2 lub 3'
+    playerMove = 'wybierz 1,2 lub 3';
+}
 
 printMessage('Twój ruch to: ' + playerMove);
 
