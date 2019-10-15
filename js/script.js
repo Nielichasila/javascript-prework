@@ -1,23 +1,27 @@
 {
 const playGame = function (playerInput){  
     clearMessages();
+
+const stone = 'kamień';
+const paper = 'papier';
+const scissors = 'nożyce';
     
 const getMoveName = function (argMoveId){
     if(argMoveId == 1){
-        return 'kamień';
+        return stone;
     } else if(argMoveId == 2){
-        return 'papier';
+        return paper;
     } else if(argMoveId == 3){
-        return 'nożyce';
+        return scissors;
     }    else {
         printMessage('Nie znam ruchu o id ' + argMoveId + '.');
         return 'nieznany ruch';
     }
 }
 const displayResult = function (argComputerMove, argPlayerMove) {
-    if (argComputerMove == 'kamień' && argPlayerMove == 'papier' || argComputerMove == 'papier' && argPlayerMove == 'nożyce' || argComputerMove == 'nożyce' && argPlayerMove == 'kamień') {
+    if (argComputerMove == stone && argPlayerMove == paper || argComputerMove == paper && argPlayerMove == scissors || argComputerMove == scissors && argPlayerMove == stone) {
         printMessage('Ty wygrywasz!');
-    } else if (argComputerMove == 'papier' && argPlayerMove == 'kamień' || argComputerMove == 'kamień' && argPlayerMove == 'nożyce' || argComputerMove == 'nożyce' && argPlayerMove == 'papier') {
+    } else if (argComputerMove == paper && argPlayerMove == stone || argComputerMove == stone && argPlayerMove == scissors || argComputerMove == scissors && argPlayerMove == paper) {
         printMessage('Przegrywasz!');
     } else if (argComputerMove == argPlayerMove) {
         printMessage('Remis!');
